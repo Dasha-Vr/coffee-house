@@ -1,0 +1,142 @@
+.hero {
+  background-color: #E1D4C9;
+  background-image: url("../img/hero.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+
+ @include small-tablet {
+    background-image: url("../img/hero-med.png");
+  }
+
+  @include small-mobile {
+    background-image: url("../img/hero-small.png");
+  }
+
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: start;
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-bottom: 100px;
+
+    @include small-tablet {
+      padding-left: 60px;
+    }
+
+    @include mobile {
+      padding: 60px 16px;
+    }
+
+    @include small-mobile {
+      padding: 62px 16px;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    color: var(--text-light, #E1D4C9);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Inter;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 105%;
+    max-width: 530px;
+
+
+    @include big-mobile {
+      font-size: 50px;
+    }
+
+
+    @include mobile {
+      font-size: 42px;
+      width: 316px;
+    }
+
+
+    @include small-mobile {
+
+    }
+
+
+    span {
+      color: #B0907A;
+      font-style: italic;
+    }
+  }
+
+  &__text {
+    color: var(--text-light, #E1D4C9);
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    max-width: 530px;
+    padding: 0;
+    margin: 0;
+
+    @include mobile{
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 150%;
+    }
+
+    @include small-mobile{
+      padding-top: 8px;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    width: 200px;
+    background-color: #E1D4C9;
+    color: var(--text-dark, #403F3D);
+    padding: 20px 78px;
+    border-radius: 100px;
+    font-feature-settings: 'clig' off, 'liga' off;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    transition: all 1s ease-in-out;
+
+    &:hover .hero__icon {
+      opacity: 1;
+    }
+
+    &:hover .hero__btn-text {
+      transform: translateX(-10px);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    opacity: 0;
+    overflow: visible;
+    transition: opacity 1s ease-in-out;
+    right: 30%;
+
+    @include small-tablet {
+      opacity: 1;
+    }
+  }
+
+  &__btn-text {
+    transform: translateX(0);
+    transition: all 1s ease-in-out;
+
+    @include small-tablet {
+      transform: translateX(-10px);
+    }
+  }
+}

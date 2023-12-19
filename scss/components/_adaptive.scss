@@ -1,0 +1,9 @@
+.adaptive-title{
+  @include big-mobile{
+    font-size: 40px;
+  }
+
+  @include mobile{
+    font-size: 32px;
+  }
+}
